@@ -61,3 +61,5 @@ These devices were used to practice scalability and high availability options in
 - Practice configuring Hyper-V scalability options.  
 - Test failover scenarios with load balancing.  
 - Document improvements to lab design.
+
+In this exercise, we explored how Hyper-V allows vertical scaling (adding CPU/RAM), horizontal scaling (adding more VMs), and dynamic memory allocation. These options ensure that private cloud environments can handle changing workloads while maintaining performance and availability.
