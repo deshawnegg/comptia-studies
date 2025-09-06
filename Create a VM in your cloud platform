@@ -1,0 +1,50 @@
+# AWS EC2 Lab – Launching & Managing a Web Server
+
+This project demonstrates my hands-on practice with **Amazon EC2 (Elastic Compute Cloud)**.  
+The lab covered launching, monitoring, securing, resizing, and protecting an EC2 instance.  
+It shows how to deploy a simple web server in the cloud, adjust its resources, and apply safeguards.
+
+---
+
+## 📌 Skills Practiced
+- Launching EC2 instances with User Data
+- Using tags to organize resources
+- Configuring security groups (firewall rules)
+- Monitoring instance health and logs
+- Resizing instances and EBS storage
+- Testing stop/termination protection
+- Exploring service limits in AWS
+
+---
+
+## ⚙️ Lab Steps
+
+### 1. Launch Instance
+- Region: **N. Virginia (us-east-1)**
+- Instance type: **t2.micro**
+- AMI: **Amazon Linux 2023**
+- Key Pair: **vockey**
+- Security Group: **Web Server security group** (no inbound rules initially)
+- Storage: **8 GiB (default)**
+- Advanced details: Enabled termination protection + added User Data script
+
+**User Data Script:**
+```bash
+#!/bin/bash
+dnf install -y httpd
+systemctl enable httpd
+systemctl start httpd
+echo '<html><h1>Hello From Your Web Server!</h1></html>' > /var/www/html/index.html
+📷 **Screenshot – EC2 Instance Running**  
+![EC2 Instance Running](./ec2-instance-running.png)
+
+📷 **Screenshot – Web Server Output**  
+![Web Server Output](./web-server-output.png)
+
+📷 **Screenshot – Instance Resized**  
+![Resized Instance](./instance-resized.png)
+
+## 🔎 Reflection
+This lab helped me understand how to launch and manage virtual servers in AWS.  
+I learned how instance types affect cost and performance, how security groups act like firewalls, and how user data scripts can automate server setup.  
+Resizing the instance and testing protections showed me how AWS makes scaling and safeguarding easy.  
